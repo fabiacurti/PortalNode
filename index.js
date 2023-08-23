@@ -1,6 +1,6 @@
 import http from 'http';
 import express from 'express';
-import autenticar from './security/Autenticacao';
+import autenticar from './security/autenticacao';
 import session from 'express-session';
 import rotaLogin from './rotas/rotaLogin';
 
