@@ -15,7 +15,11 @@ app.use(session);
 app.use(session({
     secret: 'Minh4ChAveS3crEt4',
     resave: true,
-    saveUninitialized: false
+    saveUninitialized: false,
+    cookie:{
+        maxAge:1000 * 60 * 30 
+    }
+
 }))
 // disponibilizar pasta public para os usuários
 app.use(express.static('./public'));
