@@ -2,6 +2,7 @@ import http from 'http';
 import express from 'express';
 import autenticar from './security/Autenticacao';
 import session from 'express-session';
+import rotaLogin from './rotas/rotaLogin';
 
 const hostname = 'localhost';
 //em desenvolvimento 
@@ -23,6 +24,7 @@ app.use(session({
 }));
 // disponibilizar pasta public para os usuários
 app.use(express.static('./public'));
+app.use('/login',rotaLogin)
 app.use(autenticar, express.static('./private'));
 const servidor = http.createServer(app);
 
