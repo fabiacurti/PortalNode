@@ -21,10 +21,10 @@ app.use(session({
 
 app.use(express.urlencoded({ extended: false}));
 
-app.use(express.static('./publico'));
+app.use(express.static('./public'));
 app.use('/login', rotaLogin);
 
-app.use(autenticar, express.static('./protegido'));
+app.use(autenticar, express.static('./private'));
 
 app.listen(porta, host, () =>{
     console.log("Servidor escutando em ", host, porta);
