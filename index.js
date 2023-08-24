@@ -1,33 +1,31 @@
-import http from 'http';
 import express from 'express';
-import autenticacao from './security/autenticacao';
+import autenticar from './seguranca/Autenticacao.js';
 import session from 'express-session';
-import rotaLogin from './rotas/rotaLogin';
+import rotaLogin from './rotas/rotaLogin.js';
 
-const hostname = 'localhost';
-//em desenvolvimento 
-//const porta = 3000;
 
-//no servidor 
-const porta = 3207
+const host = '0.0.0.0';
+
+const porta = '3207';
 
 const app = express();
-app.use(session);
+
 app.use(session({
     secret: 'Minh4ChAveS3crEt4',
     resave: true,
-    saveUninitialized: false,
+    saveUninitialized:false,
     cookie: {
         maxAge: 1000 * 60 * 30
     }
-
 }));
-// disponibilizar pasta public para os usuários
-app.use(express.static('./public'));
-app.use('/login',rotaLogin)
-app.use(autenticacao, express.static('./private'));
-const servidor = http.createServer(app);
 
-servidor.listen(porta, hostname, () => {
-    console.log("Servidor rodando na " + hostname + ":" + porta);
-});
+app.use(express.urlencoded({ extended: false}));
+
+app.use(express.static('./publico'));
+app.use('/login', rotaLogin);
+
+app.use(autenticar, express.static('./protegido'));
+
+app.listen(porta, host, () =>{
+    console.log("Servidor escutando em ", host, porta);
+})
