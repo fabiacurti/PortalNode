@@ -3,7 +3,7 @@ export default function autenticar(requisicao, resposta, next){
         next();
     }
     else{
-        resposta.redirect('/aluno07-ppiadsead/login.html');
+        resposta.redirect('/aluno7-ppiadsead/login.html');
     }
 
 }
