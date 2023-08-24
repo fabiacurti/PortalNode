@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -11,7 +10,7 @@
         <br/>
         <div class="container w-50">
             <h1>Login no Sistema</h1>
-            <form method="POST" action="/aluno7-ppiadsead/login" class="row g-3 needs-validation" novalidate>
+            <form method="POST" action="/login" class="row g-3 needs-validation" novalidate>
                 <div class="row pt-4">
                     <div class="col-md-4">
                         <label for="validationCustom01" class="form-label">Usuário</label>
@@ -50,10 +49,10 @@
                 (() => {
   'use strict'
 
-
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
   const forms = document.querySelectorAll('.needs-validation')
 
-  
+  // Loop over them and prevent submission
   Array.from(forms).forEach(form => {
     form.addEventListener('submit', event => {
       if (!form.checkValidity()) {
