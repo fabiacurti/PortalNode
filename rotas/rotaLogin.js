@@ -15,7 +15,7 @@ rotaLogin.get("/",(requisicao, resposta) =>{
 
    }
    else{
-    responsta.send("Falha ao tentar logar.");
+    resposta.send("Falha ao tentar logar.");
    }
 })
 export default rotaLogin;

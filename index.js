@@ -1,6 +1,6 @@
 import http from 'http';
 import express from 'express';
-import autenticar from './security/autenticacao';
+import autenticacao from './security/autenticacao';
 import session from 'express-session';
 import rotaLogin from './rotas/rotaLogin';
 
@@ -25,7 +25,7 @@ app.use(session({
 // disponibilizar pasta public para os usuários
 app.use(express.static('./public'));
 app.use('/login',rotaLogin)
-app.use(autenticar, express.static('./private'));
+app.use(autenticacao, express.static('./private'));
 const servidor = http.createServer(app);
 
 servidor.listen(porta, hostname, () => {
