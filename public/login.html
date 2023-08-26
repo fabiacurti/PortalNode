@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -32,28 +32,29 @@
       <div class="login-container">
         <h2 class="text-center">Login</h2>
         <form
-          id="login-form"
-          method="POST"
+          method="POST"         
           action="/login"
           class="needs-validation"
           novalidate
         >
           <div class="form-group">
-            <label for="username">Usuário:</label>
-            <input type="text" class="form-control" id="username" required />
+            <label for="validationCustom01">Usuário:</label>
+            <input type="text" class="form-control" id="validationCustom01" name="usuario" value="" required />
           </div>
           <div class="form-group">
-            <label for="password">Senha:</label>
+            <label for="validationCustomUsername">Senha:</label>
             <input
               type="password"
               class="form-control"
-              id="password"
+              id="validationCustomUsername"
+              name="senha"
               required
             />
           </div>
-          <button type="submit" class="btn btn-primary btn-block">
+          <button class="btn btn-primary" type="submit">
             Entrar
           </button>
+          <button class="btn btn-secondary" type="button" onclick="history.back()">Voltar</button>
         </form>
       </div>
     </div>
